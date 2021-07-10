@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     @IBOutlet var buttonSend: UIButton!
     @IBOutlet var labelTarget: UILabel!
     @IBOutlet var inputTarget: UITextField!
+    @IBOutlet var datePicker: UIDatePicker!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,10 +22,18 @@ class ViewController: UIViewController {
         inputTarget.placeholder = "Enter messages..."
         inputTarget.clearButtonMode = .whileEditing
         
-        
+        datePicker.date = .distantFuture
         
     }
     
+    @IBAction func changeDate(_ sender: UIDatePicker) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .full
+        
+        let dateValue = dateFormatter.string(from: sender.date)
+        
+        labelTarget.text = dateValue
+    }
     @IBAction func sendTextInLabel(_ sender: UIButton) {
         guard inputTarget.text != "" else { return }
         
