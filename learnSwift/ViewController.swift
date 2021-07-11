@@ -13,6 +13,8 @@ class ViewController: UIViewController {
     @IBOutlet var labelTarget: UILabel!
     @IBOutlet var inputTarget: UITextField!
     @IBOutlet var datePicker: UIDatePicker!
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var switchName: UISwitch!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +25,8 @@ class ViewController: UIViewController {
         inputTarget.clearButtonMode = .whileEditing
         
         datePicker.date = .distantFuture
+        
+        switchName.isOn = true
         
     }
     
@@ -53,6 +57,16 @@ class ViewController: UIViewController {
             inputTarget.text = ""
         }
     }
+    
+    @IBAction func hideName(_ sender: UISwitch) {
+        if(sender.isOn == false){
+            nameLabel.isHidden = true
+        } else {
+            nameLabel.isHidden = false
+        }
+        
+    }
+    
     
 }
 

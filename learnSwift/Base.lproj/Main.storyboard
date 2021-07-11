@@ -13,11 +13,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="learnSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="1200"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ids-vP-60m">
-                                <rect key="frame" x="-4" y="44" width="422" height="1122"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ids-vP-60m">
+                                <rect key="frame" x="-4" y="44" width="422" height="1422"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oYy-oz-6TD">
                                         <rect key="frame" x="159.5" y="20" width="103" height="58"/>
@@ -30,11 +30,11 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="184" translatesAutoresizingMaskIntoConstraints="NO" id="QpL-c4-tkN">
-                                        <rect key="frame" x="16" y="694" width="390" height="34"/>
+                                        <rect key="frame" x="16" y="994" width="390" height="34"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RQV-JW-YKE">
                                                 <rect key="frame" x="0.0" y="0.0" width="160" height="34"/>
-                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f2Y-aj-uec">
@@ -53,6 +53,13 @@
                                             <constraint firstItem="RQV-JW-YKE" firstAttribute="centerY" secondItem="QpL-c4-tkN" secondAttribute="centerY" id="J7z-zX-fAa"/>
                                         </constraints>
                                     </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Artem Ermakov" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vab-jK-uHX">
+                                        <rect key="frame" x="87.5" y="1138" width="247" height="46"/>
+                                        <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="38"/>
+                                        <nil key="textColor"/>
+                                        <color key="highlightedColor" systemColor="secondarySystemGroupedBackgroundColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="QpL-c4-tkN" firstAttribute="leading" secondItem="gMW-0w-Rnw" secondAttribute="leading" constant="16" id="DsL-9n-HhT"/>
@@ -64,34 +71,49 @@
                                     <constraint firstItem="oYy-oz-6TD" firstAttribute="centerX" secondItem="ids-vP-60m" secondAttribute="centerX" id="khz-oH-XVn"/>
                                     <constraint firstAttribute="bottom" secondItem="QpL-c4-tkN" secondAttribute="bottom" constant="453" id="kuB-ah-QRJ"/>
                                     <constraint firstItem="gMW-0w-Rnw" firstAttribute="bottom" secondItem="QpL-c4-tkN" secondAttribute="bottom" constant="394" id="nfT-g3-GbG"/>
-                                    <constraint firstAttribute="trailing" secondItem="oYy-oz-6TD" secondAttribute="trailing" constant="159.5" id="q59-Li-Grh"/>
+                                    <constraint firstItem="vab-jK-uHX" firstAttribute="centerX" secondItem="ids-vP-60m" secondAttribute="centerX" id="p89-nj-pod"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="CRP-OQ-JUr"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="gMW-0w-Rnw"/>
                             </scrollView>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="Y0L-c9-tuC">
+                            <datePicker contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="Y0L-c9-tuC">
                                 <rect key="frame" x="0.0" y="897" width="414" height="162"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="162" id="6cY-ec-UhG"/>
+                                </constraints>
                                 <locale key="locale" localeIdentifier="ru_BY"/>
                                 <connections>
                                     <action selector="changeDate:" destination="BYZ-38-t0r" eventType="valueChanged" id="NKH-jL-XOI"/>
                                 </connections>
                             </datePicker>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kts-HZ-VWb">
+                                <rect key="frame" x="182.5" y="1306" width="51" height="31"/>
+                                <connections>
+                                    <action selector="hideName:" destination="BYZ-38-t0r" eventType="valueChanged" id="AUh-9g-pIo"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
                         <constraints>
                             <constraint firstItem="ids-vP-60m" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="E5V-pM-Bbd"/>
+                            <constraint firstItem="Y0L-c9-tuC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="853" id="JPq-Wq-8Sf"/>
                             <constraint firstItem="ids-vP-60m" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="VJF-8D-VcG"/>
+                            <constraint firstItem="Kts-HZ-VWb" firstAttribute="centerX" secondItem="Y0L-c9-tuC" secondAttribute="centerX" id="XmN-iM-Ukt"/>
+                            <constraint firstItem="Y0L-c9-tuC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="daG-s2-Xdv"/>
                             <constraint firstItem="ids-vP-60m" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="eXF-rE-gcY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Kts-HZ-VWb" secondAttribute="bottom" constant="129" id="hus-B5-Yvl"/>
+                            <constraint firstItem="Kts-HZ-VWb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="v1M-Ws-eqV"/>
                         </constraints>
                     </view>
-                    <size key="freeformSize" width="414" height="1200"/>
+                    <size key="freeformSize" width="414" height="1500"/>
                     <connections>
                         <outlet property="buttonSend" destination="f2Y-aj-uec" id="tra-X7-RqY"/>
                         <outlet property="datePicker" destination="Y0L-c9-tuC" id="QQe-Gm-kKO"/>
                         <outlet property="inputTarget" destination="RQV-JW-YKE" id="eWv-sz-Qgt"/>
                         <outlet property="labelTarget" destination="oYy-oz-6TD" id="DhQ-wB-Wre"/>
+                        <outlet property="nameLabel" destination="vab-jK-uHX" id="KYL-TF-PEa"/>
+                        <outlet property="switchName" destination="Kts-HZ-VWb" id="dMq-lW-g5r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -102,6 +124,9 @@
     <resources>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="secondarySystemGroupedBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGroupedBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
